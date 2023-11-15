@@ -1,7 +1,5 @@
 import './App.css';
 
-const PORT = process.env.PORT()
-
 async function fetchData(e) {
     e.preventDefault();
     const form = e.target;
