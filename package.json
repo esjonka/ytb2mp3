@@ -1,0 +1,13 @@
+{
+  "name": "ytb2mp3v2",
+  "version": "1.0.0",
+  "description": "\"# ytb2mp3\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd backend/src && node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
