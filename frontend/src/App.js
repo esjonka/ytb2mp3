@@ -1,5 +1,7 @@
 import './App.css';
 
+const PORT = process.env.PORT()
+
 async function fetchData(e) {
     e.preventDefault();
     const form = e.target;
@@ -11,9 +13,9 @@ async function fetchData(e) {
         body: JSON.stringify({url: `${formData.get('url')}`}),
     };
 
-    const getTitle = await fetch('http://localhost:3001/download/title', requestOptions).then((res) => res.json())
+    const getTitle = await fetch('https://ytb2mp3-stg-0840c0604471.herokuapp.com/', requestOptions).then((res) => res.json())
 
-    const response = await fetch('http://localhost:3001/download/mp3', requestOptions, {responseType: 'blob'}).then((res) => res.blob())
+    const response = await fetch('https://ytb2mp3-stg-0840c0604471.herokuapp.com/', requestOptions, {responseType: 'blob'}).then((res) => res.blob())
     
     const url = window.URL.createObjectURL(new Blob([response], {type: 'audio/mpeg'}));
     const link = document.createElement('a');

@@ -5,8 +5,12 @@ const download = require('./routes/download')
 
 const app = express();
 
+let corsOptions = {
+    origin: 'https://ytb2mp3-stg-0840c0604471.herokuapp.com/'
+}
+
 app.use(express.json());
-app.use(cors());
+app.use(cors(), corsOptions);
 app.use(express.static(path.join(__dirname, '../../frontend/build')));
 
 const PORT = process.env.PORT || 3001;
